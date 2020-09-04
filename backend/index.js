@@ -66,9 +66,11 @@ app.get('/pokemons', (request, response) => {
 });
 
 app.post('/pokemons', (request, response) => {
-  const { name, type } = request.body;
+  const { name, type, image } = request.body;
 
-  const pokemon = { id: uuidv4(), name, type };
+  const date = new Date();
+
+  const pokemon = { id: uuidv4(), name, type, image, date };
 
   pokemons.push(pokemon);
 
@@ -77,7 +79,7 @@ app.post('/pokemons', (request, response) => {
 
 app.put('/pokemons/:id', (request, response) => {
   const { id } = request.params;
-  const { name, type } = request.body
+  const { name, type, image } = request.body
 
   const pokemonIndex = pokemons.findIndex(pokemon => pokemon.id === id);
 
@@ -85,7 +87,7 @@ app.put('/pokemons/:id', (request, response) => {
     return response.status(400).json({ error: 'Pokemon não encontrado.' });
   }
 
-  const pokemon = { id, name, type };
+  const pokemon = { id, name, type, image };
 
   pokemons[pokemonIndex] = pokemon;
 

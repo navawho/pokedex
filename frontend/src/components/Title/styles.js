@@ -1,10 +1,14 @@
 import styled from 'styled-components';
 import { shade } from 'polished';
+import typeColor from '../../utils/typeColor';
 
 export const Container = styled.div`
   height: 30px;
 
-  background-color: #C59200;
+  display: flex;
+  justify-content: center;
+
+  background-color: ${({ type }) => typeColor(type)};
   padding: 6px 24px;
   border-radius: 8px;
 

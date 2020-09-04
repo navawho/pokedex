@@ -1,14 +1,13 @@
 import React from 'react';
 import Title from '../../components/Title';
+import types from '../../utils/types';
 
 import { Card } from './styles';
 
 function Filters() {
   return (
     <Card>
-      <Title/>
-      <Title/>
-      <Title/>
+      {types.map(type => <Title type={type}/>)}
     </Card>
   );
 }

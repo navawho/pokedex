@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { shade } from 'polished';
+import typeColor from '../../utils/typeColor';
 
 export const Icon = styled.div`
   background: #D7DDF3;
@@ -28,6 +29,12 @@ export const Container = styled.div`
 
 
   display: flex;
+
+  margin-bottom: 16px;
+
+  :last-child {
+    margin: 0;
+  }
 `;
 
 export const Info = styled.div`
@@ -48,7 +55,7 @@ export const Info = styled.div`
   }
 
   h6 {
-    color: #C59200;
+    color: ${({ type }) => typeColor(type)};
     font-weight: 500;
     font-size: 20px;
     margin-bottom: 6px;

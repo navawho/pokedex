@@ -1,10 +1,10 @@
 import React from 'react';
 import { Container } from './styles';
 
-function Title() {
+function Title({ type }) {
   return (
-    <Container>
-      <h5>Todos</h5>
+    <Container type={type}>
+      <h5>{type}</h5>
     </Container>
   );
 }
